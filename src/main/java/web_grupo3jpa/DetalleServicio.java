@@ -3,6 +3,7 @@ package web_grupo3jpa;
 import java.io.Serializable;
 import jakarta.persistence.*;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.Date;
 
 
@@ -17,8 +18,8 @@ public class DetalleServicio implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@SequenceGenerator(name="DETALLE_SERVICIO_IDDETALLE_GENERATOR" )
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="DETALLE_SERVICIO_IDDETALLE_GENERATOR")
+	@GeneratedValue(generator="detalle_servicio_id_detalle_seq") 
+	@SequenceGenerator(name="detalle_servicio_id_detalle_seq",sequenceName="detalle_servicio_id_detalle_seq", allocationSize=1)
 	@Column(name="id_detalle")
 	private Integer idDetalle;
 
@@ -27,7 +28,7 @@ public class DetalleServicio implements Serializable {
 
 	@Temporal(TemporalType.DATE)
 	@Column(name="fecha_ingreso")
-	private Date fechaIngreso;
+	private LocalDate fechaIngreso;
 
 	@Column(name="inf_final")
 	private String infFinal;
@@ -64,11 +65,11 @@ public class DetalleServicio implements Serializable {
 		this.estadoServicio = estadoServicio;
 	}
 
-	public Date getFechaIngreso() {
+	public LocalDate getFechaIngreso() {
 		return this.fechaIngreso;
 	}
 
-	public void setFechaIngreso(Date fechaIngreso) {
+	public void setFechaIngreso(LocalDate fechaIngreso) {
 		this.fechaIngreso = fechaIngreso;
 	}
 

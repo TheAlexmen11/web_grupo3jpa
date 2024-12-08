@@ -16,8 +16,8 @@ public class EquipoServicio implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@SequenceGenerator(name="EQUIPO_SERVICIO_IDEQUIPO_GENERATOR" )
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="EQUIPO_SERVICIO_IDEQUIPO_GENERATOR")
+	@GeneratedValue(generator="equipo_servicio_id_equipo_seq") 
+	@SequenceGenerator(name="equipo_servicio_id_equipo_seq",sequenceName="equipo_servicio_id_equipo_seq", allocationSize=1)
 	@Column(name="id_equipo")
 	private Integer idEquipo;
 

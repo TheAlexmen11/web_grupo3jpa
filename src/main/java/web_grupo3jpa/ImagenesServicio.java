@@ -15,8 +15,8 @@ public class ImagenesServicio implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@SequenceGenerator(name="IMAGENES_SERVICIO_IDIMAGEN_GENERATOR" )
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="IMAGENES_SERVICIO_IDIMAGEN_GENERATOR")
+	@GeneratedValue(generator="imagenes_servicio_id_imagen_seq") 
+	@SequenceGenerator(name="imagenes_servicio_id_imagen_seq",sequenceName="imagenes_servicio_id_imagen_seq", allocationSize=1)
 	@Column(name="id_imagen")
 	private Integer idImagen;
 
